@@ -170,6 +170,7 @@ def search_operators(state,tasks,operators,methods,plan,task,depth,verbose):
             newstate,tasks[1:],operators,methods,plan+[task],depth+1,verbose)
         if solution != False:
             return solution
+    return False
 
 def search_methods(state,tasks,operators,methods,plan,task,depth,verbose):
     if verbose>2:
@@ -186,6 +187,7 @@ def search_methods(state,tasks,operators,methods,plan,task,depth,verbose):
                 state,subtasks+tasks[1:],operators,methods,plan,depth+1,verbose)
             if solution != False:
                 return solution
+    return False
 
 def seek_plan(state,tasks,operators,methods,plan,depth,verbose=0):
     """
